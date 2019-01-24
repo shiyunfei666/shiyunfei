@@ -4,10 +4,12 @@ import HelloWorld from '@/components/HelloWorld'
 import rwlist from '@/components/rw/rwlist'
 import splist from '@/components/sp/splist'
 import zmtlist from '@/components/zmt/zmtlist'
+import user from '@/components/user/user'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -25,6 +27,10 @@ export default new Router({
       path: '/zmtlist',
       name: 'zmtlist',
       component: zmtlist
+    },{
+      path: '/user',
+      name: 'user',
+      component: user
     }
   ]
 })

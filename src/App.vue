@@ -5,7 +5,6 @@
 		<el-container>
 			<el-aside width="200px">
 			    <el-menu
-			      default-active="2-1"
 			      class="el-menu-vertical-demo"
 			      background-color="#dcdfe6"
 			      @select="handleSelect"
@@ -173,6 +172,8 @@ export default {
   	handleSelect(key, keyPath) {
       if(key == '2-1'){
       	this.$router.push({ path: '/rwlist' })
+      }else if(key == '1-1'){
+      	this.$router.push({ path: '/user' })
       }else if(key == '3-1'){
       	this.$router.push({ path: '/zmtlist' })
       }else if(key == '4-1'){
@@ -200,9 +201,11 @@ html,body,#app,.el-container,.el-aside,.el-menu{
   	>.el-container{
   		>.el-aside{
   			>.el-menu{
+  				overflow-x: hidden;
   				.el-menu-item{
 					height: 35px;
 					line-height: 35px;
+					width: 200px;
 				}
   				>.el-submenu{
   					>.el-submenu__title{
@@ -210,7 +213,7 @@ html,body,#app,.el-container,.el-aside,.el-menu{
 						line-height: 35px;
   					}
   					>ul{
-  						
+
   					}
   					.el-menu-item-group__title{
 					    padding: 0;

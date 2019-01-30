@@ -1,7 +1,6 @@
 <template>
   <div>
-    rwlist
-    <button @click="a">点击</button>
+    <el-button @click="a">点击</el-button>
   </div>
 </template>
 
@@ -12,9 +11,6 @@ export default {
     return {
       
     }
-  },
-  mounted: function(){
-  	
   },
   methods: {
   	a(){
@@ -27,7 +23,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 
 </style>

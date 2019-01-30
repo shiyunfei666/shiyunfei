@@ -1,6 +1,7 @@
 'use strict'
 const path = require('path')
 const utils = require('./utils')
+var webpack = require("webpack")
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 
@@ -21,6 +22,13 @@ const createLintingRule = () => ({
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin('common.js'),
+    new webpack.ProvidePlugin({
+    jQuery: "jquery",
+    $: "jquery"
+    })  
+  ],
   entry: {
     app: './src/main.js'
   },

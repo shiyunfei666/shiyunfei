@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-  	<el-container>
+  	<el-container v-if="isload">
 		<el-header>传播匠</el-header>
 		<el-container>
 			<el-aside width="200px">
@@ -157,29 +157,56 @@
 			</el-main>
 		</el-container>
 	</el-container>
+	<login v-else :isload="isload" @changeisload="changeisload"></login>
   </div>
 </template>
 
 <script>
+import login from './components/login/login.vue'
 export default {
   name: 'App',
   data () {
   	return {
-
+        isload: false,
   	}
   },
+  components: { login },
+  created(){
+    if(!this.isload){
+    	this.$router.push({ path: '/login' })
+    }else{
+    	if(this.$route.path == '/' || this.$route.path == '/login'){
+            this.$router.push({ path: '/user' })
+    	}
+    }
+  },
   methods: {
+  	changeisload(msg){
+        this.isload = true;
+        this.$router.push({ path: '/user' })
+  	},
   	handleSelect(key, keyPath) {
       if(key == '2-1'){
       	this.$router.push({ path: '/rwlist' })
+      }else if(key == '2-2'){
+      	this.$router.push({ path: '/rwadd' })
       }else if(key == '1-1'){
       	this.$router.push({ path: '/user' })
       }else if(key == '3-1'){
       	this.$router.push({ path: '/zmtlist' })
       }else if(key == '4-1'){
       	this.$router.push({ path: '/splist' })
+      }else{
+      	this.$router.push({ path: '/rwlist' })
       }
     }
+  },
+  watch: {
+  	$route(data,olddata){
+        if(data.path == '/login'){
+        	this.isload = false;
+        }
+  	}
   }
 }
 </script>
@@ -221,6 +248,9 @@ html,body,#app,.el-container,.el-aside,.el-menu{
   				}
   			}
   		}
+  	}
+  	.el-main{
+  		padding: 0;
   	}
   }
 }

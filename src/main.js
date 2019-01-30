@@ -3,9 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import $ from 'jquery'
+import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/css/base.css'
+import '@/assets/icon/iconfont.css'
+import '../static/css/main.css'
+import '@/assets/js/axios.js'
 import '@/assets/js/element.js'
-import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.config.productionTip = false
 

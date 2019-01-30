@@ -9,6 +9,8 @@
 			:data="tableData"
 			style="width: 100%"
 			:default-sort = "{prop: 'date', order: 'descending'}"
+			size="small" 
+			border
 			>
 			<el-table-column
 			  prop="date"

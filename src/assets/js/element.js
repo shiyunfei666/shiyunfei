@@ -15,7 +15,11 @@ import {
 	MenuItem,
 	Table,
 	TableColumn,
-	Pagination
+	Pagination,
+	Form,
+	FormItem,
+	Carousel,
+	CarouselItem
 } from 'element-ui';
 
 Vue.use(Input)
@@ -33,4 +37,8 @@ Vue.use(MenuItem)
 Vue.use(Table);
 Vue.use(TableColumn);
 Vue.use(Pagination);
+Vue.use(Form);
+Vue.use(FormItem);
+Vue.use(Carousel);
+Vue.use(CarouselItem);
 Vue.prototype.$message = Message;

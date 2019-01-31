@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import $ from 'jquery'
+import store from './store/index.js'//引入store
 import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/css/base.css'
 import '@/assets/icon/iconfont.css'
@@ -17,6 +18,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,//使用store
   components: { App },
   template: '<App/>'
 })

@@ -10,7 +10,7 @@
 		      <el-input id="pd" v-model="formLabelAlign.password" placeholder="请输入密码" prefix-icon="el-icon-syf-mima" type="password" suffix-icon="el-icon-view"></el-input>
 		  </el-form-item>
 		</el-form>
-    	<el-button @click="changeload">登&nbsp;&nbsp;陆</el-button>
+    	<el-button @click="changeload">登&nbsp;&nbsp;录</el-button>
     </div>
     
   </div>

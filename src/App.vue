@@ -196,6 +196,10 @@ export default {
       	this.$router.push({ path: '/zmtlist' })
       }else if(key == '4-1'){
       	this.$router.push({ path: '/splist' })
+      }else if(key == '4-2'){
+      	this.$router.push({ path: '/spadd' })
+      }else if(key == '4-3'){
+      	this.$router.push({ path: '/sppend' })
       }else{
       	this.$router.push({ path: '/rwlist' })
       }

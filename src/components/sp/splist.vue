@@ -13,7 +13,7 @@ export default {
     }
   },
   mounted: function(){
-    this.starttimg();
+    this.starttimgs();
   },
   methods: {
     stoppoi(e){
@@ -34,7 +34,7 @@ export default {
             $(e.target).remove();
     	}
     },
-    starttimg(){
+    starttimgs(){
     	var index=1,z,s;
     	setInterval(()=>{
     		Math.random()>0.5 ? s = 1 : s = -1;

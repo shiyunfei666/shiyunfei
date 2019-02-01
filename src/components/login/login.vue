@@ -1,6 +1,12 @@
 <template>
   <div id="login">
     <div id="imgscode"></div>
+    <div id="cbj">
+    	<span>传</span>
+    	<span>播</span>
+    	<span>匠</span>
+    </div>
+    <!-- <canvas id="canvas"></canvas> -->
     <div class="con">
     	<el-form :model="loginform">
 		  <el-form-item>
@@ -30,6 +36,7 @@
 <script>
 import {mapState,mapGetters,mapActions} from 'vuex'; //先要引入
 import '@/assets/js/jquery.lgymove.js'
+// import '@/assets/js/canvas.js'
 export default {
   name: 'login',
   data () {

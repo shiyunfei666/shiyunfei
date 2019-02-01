@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import rwlist from '@/components/rw/rwlist'
 import rwadd from '@/components/rw/rwadd'
 import splist from '@/components/sp/splist'
+import spadd from '@/components/sp/spadd'
+import sppend from '@/components/sp/sppend'
 import zmtlist from '@/components/zmt/zmtlist'
 import user from '@/components/user/user'
 import login from '@/components/login/login'
@@ -28,6 +30,14 @@ export default new Router({
       path: '/splist',
       name: 'splist',
       component: splist
+    },{
+      path: '/spadd',
+      name: 'spadd',
+      component: spadd
+    },{
+      path: '/sppend',
+      name: 'sppend',
+      component: sppend
     },{
       path: '/zmtlist',
       name: 'zmtlist',

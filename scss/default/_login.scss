@@ -2,6 +2,7 @@
 	height: 100%;
 	background-image: url(/static/img/bg2.jpg);
 	position: relative;
+	background-size: cover;
 	canvas{
 	  position: fixed;
 	  top: 0;
@@ -125,6 +126,33 @@
 		>.el-button{
 			width: 80%;
 			margin: 0 10%;
+		}
+	}
+	#cbj{
+		position: absolute;
+		top: 20%;
+		left: 10%;
+		color: white;
+		font-size: 36px;
+		transform: rotate(-35deg);
+		z-index: 4;
+		>span{
+			position: relative;
+			display: inline-block;
+		    -webkit-background-clip: text;
+		    -webkit-text-fill-color: transparent;
+		}
+		>span:nth-child(1){
+            transform: rotate(-25deg);
+            background-image: -webkit-gradient(linear, left 0, right 0, from(rgb(255, 255, 0)), to(rgb(0, 255, 0)));
+		}
+		>span:nth-child(2){
+			top: -10px;
+			background-image: -webkit-gradient(linear, left 0, right 0, from(rgb(0, 255, 0)), to(rgb(0, 255, 255)));
+		}
+		>span:nth-child(3){
+			transform: rotate(25deg);
+			background-image: -webkit-gradient(linear, left 0, right 0, from(rgb(0, 255, 255)), to(rgb(255, 0, 255)));
 		}
 	}
 }

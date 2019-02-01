@@ -2,6 +2,7 @@
   height: 100%;
   background-image: url(/static/img/bg2.jpg);
   position: relative;
+  background-size: cover;
 }
 #login canvas {
   position: fixed;
@@ -127,4 +128,31 @@
 #login .con > .el-button {
   width: 80%;
   margin: 0 10%;
+}
+#login #cbj {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  color: white;
+  font-size: 36px;
+  transform: rotate(-35deg);
+  z-index: 4;
+}
+#login #cbj > span {
+  position: relative;
+  display: inline-block;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#login #cbj > span:nth-child(1) {
+  transform: rotate(-25deg);
+  background-image: -webkit-gradient(linear, left 0, right 0, from(yellow), to(lime));
+}
+#login #cbj > span:nth-child(2) {
+  top: -10px;
+  background-image: -webkit-gradient(linear, left 0, right 0, from(lime), to(cyan));
+}
+#login #cbj > span:nth-child(3) {
+  transform: rotate(25deg);
+  background-image: -webkit-gradient(linear, left 0, right 0, from(cyan), to(magenta));
 }

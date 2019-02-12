@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import rwlist from '@/components/rw/rwlist'
 import rwadd from '@/components/rw/rwadd'
+import rwzlist from '@/components/rw/rwzlist'
 import splist from '@/components/sp/splist'
 import spadd from '@/components/sp/spadd'
 import sppend from '@/components/sp/sppend'
@@ -22,10 +23,14 @@ export default new Router({
       path: '/rwlist',
       name: 'rwlist',
       component: rwlist
-    },,{
+    },{
       path: '/rwadd',
       name: 'rwadd',
       component: rwadd
+    },{
+      path: '/rwzlist',
+      name: 'rwzlist',
+      component: rwzlist
     },{
       path: '/splist',
       name: 'splist',

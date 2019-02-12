@@ -15,13 +15,13 @@ export default {
     }
   },
   mounted: function(){
-    this.starttimg();
+    this.starttimgl();
   },
   methods: {
     stoppoi(e){
         clearInterval(this.t)
     },
-    starttimg(){
+    starttimgl(){
     	var index=1,z,s;
     	setInterval(()=>{
     		Math.random()>0.5 ? s = 1 : s = -1;
@@ -35,23 +35,25 @@ export default {
 	        k = Math.random();
 	        $(".a"+index).css({
                 left: x + 'px',
-                width: k*80 + 'px',
-                height: k*80 + 'px'
+                width: k*160 + 'px',
+                height: k*160 + 'px'
 	        })
 	        $(".a"+index).animate({
 	        	top: 0 +'px',
 	        	left: x + z + 'px',
 	        }, (1-k)*5000+5000, "swing", function(){
 	        	$(this).animate({
-	                width: k*80*2 + 'px',
-	                height: k*80*2 + 'px',
+	                width: k*160*2 + 'px',
+	                height: k*160*2 + 'px',
+	                top: -k*160 +'px',
+	                left: $(this).position().left - $(this).width()*0.5 +'px',
 	                opacity: 0
-	        	},50,function(){
+	        	},100,function(){
 	        		$(this).remove();
 	        	})
 	        });
 	        index++;
-	    },200)
+	    },400)
     }
   }
 }

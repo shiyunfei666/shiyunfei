@@ -190,6 +190,8 @@ export default {
       	this.$router.push({ path: '/rwlist' })
       }else if(key == '2-2'){
       	this.$router.push({ path: '/rwadd' })
+      }else if(key == '2-3'){
+      	this.$router.push({ path: '/rwzlist' })
       }else if(key == '1-1'){
       	this.$router.push({ path: '/user' })
       }else if(key == '3-1'){

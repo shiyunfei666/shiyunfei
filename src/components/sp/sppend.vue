@@ -9,7 +9,8 @@ export default {
   name: 'sppend',
   data () {
     return {
-      t: null
+      t: null,
+      i: 0,
     }
   },
   mounted: function(){
@@ -20,7 +21,7 @@ export default {
         clearInterval(this.t)
     },
     starttimg(){
-    	var index=1,z,s;
+    	var index=1,z,s,self=this;
     	setInterval(()=>{
     		Math.random()>0.5 ? s = 1 : s = -1;
             z = Math.random()*500*s;
@@ -35,6 +36,11 @@ export default {
                 left: x + 'px',
                 width: k*200 + 'px'
 	        })
+          $(".a"+index).click(function(){
+              self.i += 100;
+              self.$message.success({ message: "共抓取" + self.i + "元！加油！" })
+              $(this).remove();
+          })
 	        $(".a"+index).animate({
 	        	top:$("#sppend").height()+'px',
 	        	left: x + z + 'px',
@@ -58,6 +64,7 @@ export default {
 		width: 40px;
 		position: absolute;
 		top: -40px;
+    cursor: pointer;
 	}
 }
 </style>

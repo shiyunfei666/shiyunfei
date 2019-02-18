@@ -42,6 +42,7 @@
             //按钮拖动事件
             $divMove.on({
                 mousedown: function (e) {
+                    console.log("按下事件")
                     //清除提示信息
                     $this.find(".code-tip").html("");
                     var event = e || window.event;
@@ -55,7 +56,8 @@
                 }
             });
             //鼠标点击松手事件
-            $(document).mouseup(function (e) {
+            $divWrap.mouseup(function (e) {
+                console.log("松手事件")
                 var lastX = $this.find(".code-mask").offset().left - dX - 1;
                 isDown = false;//鼠标拖拽启
                 $divMove.removeClass("active");
@@ -65,6 +67,7 @@
             });
             //滑动事件
             $divWrap.mousemove(function (event) {
+                console.log("滑动事件")
                 var event = event || window.event;
                 var x = event.pageX;//鼠标滑动时的X轴
                 if (isDown) {
@@ -76,6 +79,9 @@
             });
             //验证数据
             function checkcode(code){
+                $divWrap.onmousemove =function(){
+                    null;
+                }
                 var iscur=true;
                 //模拟ajax
                 setTimeout(function(){

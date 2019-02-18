@@ -7,8 +7,10 @@ import splist from '@/components/sp/splist'
 import spadd from '@/components/sp/spadd'
 import sppend from '@/components/sp/sppend'
 import zmtlist from '@/components/zmt/zmtlist'
+import zmtpend from '@/components/zmt/zmtpend'
 import user from '@/components/user/user'
 import login from '@/components/login/login'
+import index from '@/components/index/index'
 
 Vue.use(Router)
 
@@ -17,8 +19,12 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'logins',
-      component: login
+      name: 'index',
+      component: index
+    },{
+      path: '/index',
+      name: 'indexs',
+      component: index
     },{
       path: '/rwlist',
       name: 'rwlist',
@@ -47,6 +53,10 @@ export default new Router({
       path: '/zmtlist',
       name: 'zmtlist',
       component: zmtlist
+    },{
+      path: '/zmtpend',
+      name: 'zmtpend',
+      component: zmtpend
     },{
       path: '/user',
       name: 'user',

@@ -1,9 +1,6 @@
 <template>
   <div id="rwzlist">
-    <canvas id="solar" style="width: 400px; height: 400px;"></canvas>
-    <canvas>
-      
-    </canvas>
+    <canvas id="solar" style="width: 400px; height: 200px;"></canvas>
   </div>
 </template>
 

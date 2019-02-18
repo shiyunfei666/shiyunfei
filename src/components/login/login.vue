@@ -5,38 +5,61 @@
     	<span>传</span>
     	<span>播</span>
     	<span>匠</span>
+      <span>助力企业成长！</span>
     </div>
-    <!-- <canvas id="canvas"></canvas> -->
+    <swiper :options="swiperOption">
+      <swiper-slide v-for="(slide, index) in swiperSlides" :key="index">
+        <a href="javascript:;">
+          <img src="/static/img/bg2.jpg" alt="">
+        </a>
+      </swiper-slide>
+    </swiper>
     <div class="con">
     	<el-form :model="loginform">
-		  <el-form-item>
-		      <el-input 
-		      v-model="loginform.username" 
-		      placeholder="请输入用户名" 
-		      prefix-icon="el-icon-syf-user" 
-		      @keyup.native.enter="changeload"></el-input>
-		  </el-form-item>
-		  <el-form-item>
-		      <el-input 
-		      id="pd" 
-		      v-model="loginform.password" 
-		      placeholder="请输入密码" 
-		      prefix-icon="el-icon-syf-mima" 
-		      type="password" 
-		      suffix-icon="el-icon-view" 
-		      @keyup.native.enter="changeload"></el-input>
-		  </el-form-item>
-		</el-form>
-    	<el-button @click="changeload">登&nbsp;&nbsp;录</el-button>
+        <div class="logintit">用户登录</div>
+  		  <el-form-item>
+  		      <el-input 
+  		      v-model="loginform.username" 
+  		      placeholder="手机号/已认证邮箱" 
+  		      prefix-icon="el-icon-syf-user" 
+  		      @keyup.native.enter="changeload"></el-input>
+  		  </el-form-item>
+  		  <el-form-item>
+  		      <el-input 
+  		      id="pd" 
+  		      v-model="loginform.password" 
+  		      placeholder="登录密码" 
+  		      prefix-icon="el-icon-syf-mima" 
+  		      type="password" 
+  		      suffix-icon="el-icon-view" 
+  		      @keyup.native.enter="changeload"></el-input>
+  		  </el-form-item>
+  		</el-form>
+      <el-button type="primary" @click="tosignasd">验&nbsp;&nbsp;证</el-button>
+      <el-button type="primary" @click="changeload">登&nbsp;&nbsp;录</el-button>
+      <div class="tosign">还没有账号？立即 <a href="javascript:;">免费注册</a></div>
     </div>
-    
+    <div class="fotter">
+      <ul class="fotlist">
+        <li><a href="javascript:;">官方网站</a></li>
+        <li><a href="javascript:;">联系我们</a></li>
+        <li><a href="javascript:;">新闻动态</a></li>
+        <li><a href="javascript:;">最新活动</a></li>
+        <li><a href="javascript:;">招贤纳士</a></li>
+        <li><a href="javascript:;">法律声明</a></li>
+        <li><a href="javascript:;">服务协议</a></li>
+      </ul>
+      <div>Copyright © 201？-201？ dajiang.jiangpr.com All Rights Reserved.版权所有：大将传媒</div>
+      <div>大同东信国际 上悦城 609</div>
+      <div>ICP备案： 冀公网安备：</div>
+    </div>
   </div>
 </template>
 
 <script>
-import {mapState,mapGetters,mapActions} from 'vuex'; //先要引入
+import 'swiper/dist/css/swiper.css'
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import '@/assets/js/jquery.lgymove.js'
-// import '@/assets/js/canvas.js'
 export default {
   name: 'login',
   data () {
@@ -44,21 +67,10 @@ export default {
         loginform: {
             username: '',
             password: '',
-        }
+        },
+        swiperOption: {},
+        swiperSlides: [1, 2, 3, 4, 5]
     }
-  },
-  computed: {
-    ...mapState({
-        isShow:state=>state.showFooter,
-        changableNum:state=>state.changableNum
-    }),
-    ...mapGetters({
-        isShow:'isShow',
-        getChangedNum:'getChangedNum',
-    })
-  },
-  props: {
-    isload: Boolean,
   },
   mounted: function(){
   	 $(".el-icon-view").click(function(){
@@ -69,9 +81,22 @@ export default {
         $("#pd").attr("type","text");
       }
     });
+     var self = this;
+    self.apphttps(
+      {
+        method: "post",
+        url: "admindlcode",
+      },
+      function(res) {
+        if(res.result == -1){
+            console.log(res)
+          }else{
+            // self.$message.error({ message: res.msg });
+          }
+      }
+    );
   },
   methods: {
-  	...mapActions([ 'hideFooter', 'showFooter', 'getNewNum' ]),
   	changeload(){
   		var self = this;
   		if(self.loginform.username == ''){
@@ -82,7 +107,6 @@ export default {
             self.$message.error({ message: '密码不为空' });
             return
   		}
-  		self.$emit('changeisload',true)
   		self.apphttps(
 	      {
 	        method: "post",
@@ -96,15 +120,18 @@ export default {
 	      function(res) {
 	        if(res.result == -1){
 	        	self.$message.success({ message: '登陆成功' });
-	        	$("#imgscode").imgcode();
-                // self.$emit('changeisload',true)
-            }else{
-            	self.$message.error({ message: res.msg });
-            }
+          }else{
+          	self.$message.error({ message: res.msg });
+          }
 	      }
 	    );
-	    
   	},
+    tosignasd(){
+      $("#imgscode").imgcode(a());
+      function a(data){
+        console.log(data)
+      }
+    },
   	sendcode(){
   		var self = this;
   		self.apphttps(
@@ -122,6 +149,10 @@ export default {
 	      }
 	    );
   	}
+  },
+  components: {
+    swiper,
+    swiperSlide
   }
 }
 </script>

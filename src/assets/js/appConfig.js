@@ -6,13 +6,13 @@ const appConfig = {
     port: "8080",
 
     //域名
-    domainName: "dajiang.jiangpr.com",
+    domainName: "dj.jiangpr.com",
 
     //网站根目录
     baseUrl: "",
 
     //接口根目录
-    apiBaseUrl: "http://dajiang.jiangpr.com",
+    apiBaseUrl: "http://dj.jiangpr.com",
 
     //文件重命名地址
     upFileUrl: "",
@@ -34,7 +34,8 @@ const appConfig = {
     //接口列表
     apis: {
         adminlogin: '/admin/usey/login',  //登陆验证 code:    pd:    us: 
-    	admindlsend: '/admin/usey/dlsend',  //发送验证码 参数 phone: 
+        admindlsend: '/admin/usey/dlsend',  //发送验证码 参数 phone: 
+    	admindlcode: '/main/main/code',  //发送验证码 参数 phone: 
     }
 }
 

@@ -1,7 +1,7 @@
 <template>
   <div id="zmcon">
     <div id="box" :style="{transform: 'rotateX('+ y +'deg) rotateY('+ -x +'deg)'}">
-      <div class="mofang_box mofang_box" v-for="item in 45">
+      <div class="mofang_box mofang_box" v-for="item in 27">
         <div class="mofang qian"><img src="/static/img/timg.png"></div>
         <div class="mofang hou"><img src="/static/img/timg.png"></div>
         <div class="mofang left"><img src="/static/img/timg.png"></div>
@@ -26,13 +26,15 @@ export default {
     var self = this;
     var oBox =document.getElementById("zmcon");
     oBox.onmousedown = function(ev){
+        var x = JSON.parse(JSON.stringify(self.x))
+        var y = JSON.parse(JSON.stringify(self.y))
         ev =ev ||event;
         var a =ev.clientX;
         var b =ev.clientY;
         oBox.onmousemove =function (ev){
             ev = ev || event;
-            self.x = self.x + ((a-ev.clientX)/$(this).width())*20;
-            self.y = self.y + ((b-ev.clientY)/$(this).height())*20;
+            self.x = x + ((a-ev.clientX)/$(this).width())*100;
+            self.y = y + ((b-ev.clientY)/$(this).height())*100;
         }
     }
     document.onmouseup =function(){

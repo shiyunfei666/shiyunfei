@@ -118,7 +118,7 @@
   width: 300px;
   min-height: 200px;
   position: absolute;
-  top: 45%;
+  top: 50%;
   right: 50px;
   transform: translate(0, -50%);
   border-radius: 5px;
@@ -131,7 +131,7 @@
   margin: 10px 30px;
 }
 #login .con .el-form-item {
-  margin: 20px 10%;
+  margin: 15px 10%;
 }
 #login .con .el-form-item .el-form-item__label {
   color: #fff;
@@ -143,8 +143,11 @@
 #login .con .tosign {
   font-size: 14px;
   color: #555;
-  margin: 20px 30px;
+  margin: 15px 30px;
   text-align: right;
+}
+#login .con .toyanzhen {
+  margin-bottom: 15px;
 }
 #login #cbj {
   height: 20%;
@@ -164,11 +167,11 @@
 #login .fotter {
   width: 100%;
   position: absolute;
-  top: 70%;
+  top: 80%;
   left: 0;
-  height: 30%;
+  height: 20%;
   border-top: 1px solid #eee;
-  padding-top: 40px;
+  padding-top: 20px;
 }
 #login .fotter ul {
   text-align: center;
@@ -188,14 +191,14 @@
   border: 0;
 }
 #login .fotter > div {
-  margin-bottom: 10px;
+  margin-bottom: 6px;
   font-size: 12px;
   color: #999999;
   text-align: center;
 }
 #login .swiper-container {
   top: 20%;
-  height: 50%;
+  height: 60%;
 }
 #login .swiper-container .swiper-wrapper .swiper-slide {
   text-align: center;
@@ -203,4 +206,90 @@
 #login .swiper-container .swiper-wrapper .swiper-slide img {
   height: 100%;
   width: 100%;
+}
+
+#signup {
+  min-height: 100%;
+  background: #f0f6fe;
+  overflow: auto;
+}
+#signup > .mainter {
+  width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+}
+#signup > .mainter > .top {
+  height: 80px;
+  line-height: 80px;
+  margin: 0 0 30px 0;
+}
+#signup > .mainter > .top > span {
+  color: #848484;
+  font-size: 20px;
+}
+#signup > .mainter > .top > ul {
+  display: inline-block;
+  float: right;
+}
+#signup > .mainter > .top > ul > li {
+  display: inline-block;
+}
+#signup > .mainter > .top > ul > li a {
+  color: #999;
+}
+#signup > .mainter > .con {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  min-height: calc(100% - 110px);
+}
+#signup > .mainter > .con > .stepline {
+  width: 1100px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+#signup > .mainter > .con > .stepline ul {
+  display: flex;
+}
+#signup > .mainter > .con > .stepline ul li {
+  border-bottom: 3px solid #ccc;
+  color: #ccc;
+  flex: 1;
+  padding-top: 60px;
+  text-align: center;
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+#signup > .mainter > .con > .stepline ul .steps {
+  border-bottom: 3px solid #009fd9;
+  color: #009fd9;
+}
+#signup > .mainter > .con .step1btn {
+  width: 260px;
+}
+#signup > .mainter > .con .step1 {
+  width: 70%;
+  float: left;
+}
+#signup > .mainter > .con .step1 > .el-form {
+  width: 50%;
+}
+#signup > .mainter > .con .step2 {
+  height: 2000px;
+}
+#signup > .mainter > .con .helfs {
+  width: 30%;
+  border-left: 1px solid #eee;
+  padding: 20px 6%;
+  float: right;
+}
+#signup > .mainter > .con .helfs > span {
+  font-size: 16px;
+}
+#signup > .mainter > .con .helfs > .helftip {
+  font-size: 14px;
+  margin: 30px 0 10px 0;
+}
+#signup > .mainter > .con .helfs > ul li {
+  font-size: 12px;
+  line-height: 25px;
 }

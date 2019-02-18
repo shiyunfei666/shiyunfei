@@ -4,6 +4,7 @@ import {
 	Button,
 	Radio,
 	Select,
+	Checkbox,
 	Message,
 	Container,
 	Header,
@@ -19,13 +20,16 @@ import {
 	Form,
 	FormItem,
 	Carousel,
-	CarouselItem
+	CarouselItem,
+	MessageBox,
+    Dialog,
 } from 'element-ui';
 
 Vue.use(Input)
 Vue.use(Button)
 Vue.use(Radio)
 Vue.use(Select)
+Vue.use(Checkbox)
 Vue.use(Container)
 Vue.use(Header)
 Vue.use(Aside)
@@ -41,4 +45,9 @@ Vue.use(Form);
 Vue.use(FormItem);
 Vue.use(Carousel);
 Vue.use(CarouselItem);
+Vue.use(Dialog);
+Vue.prototype.$msgbox = MessageBox;
+Vue.prototype.$alert = MessageBox.alert;
+Vue.prototype.$confirm = MessageBox.confirm;
+Vue.prototype.$prompt = MessageBox.prompt;
 Vue.prototype.$message = Message;

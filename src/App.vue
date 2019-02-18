@@ -23,11 +23,11 @@ export default {
   components: { login },
   computed: {
     showlist(){
-		if(this.$route.path.includes(['login'])){
-        	return false;
-        }else{
-        	return true;
-        }
+	    if(['/login','/signup'].includes(this.$route.path)){
+      	return false;
+      }else{
+      	return true;
+      }
     }
   },
   created(){

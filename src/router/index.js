@@ -10,6 +10,7 @@ import zmtlist from '@/components/zmt/zmtlist'
 import zmtpend from '@/components/zmt/zmtpend'
 import user from '@/components/user/user'
 import login from '@/components/login/login'
+import signup from '@/components/login/signup'
 import index from '@/components/index/index'
 
 Vue.use(Router)
@@ -65,6 +66,10 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: login
+    },{
+      path: '/signup',
+      name: 'signup',
+      component: signup
     }
   ]
 })

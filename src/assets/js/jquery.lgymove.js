@@ -42,7 +42,6 @@
             //按钮拖动事件
             $divMove.on({
                 mousedown: function (e) {
-                    console.log("按下事件")
                     //清除提示信息
                     $this.find(".code-tip").html("");
                     var event = e || window.event;
@@ -57,17 +56,18 @@
             });
             //鼠标点击松手事件
             $divWrap.mouseup(function (e) {
-                console.log("松手事件")
                 var lastX = $this.find(".code-mask").offset().left - dX - 1;
                 isDown = false;//鼠标拖拽启
                 $divMove.removeClass("active");
                 //还原按钮阴影
                 $divMove.css({"box-shadow":"0 0 3px #ccc"});
                 checkcode(lastX);
+                $divWrap.onmousemove =function(){
+                    null;
+                }
             });
             //滑动事件
             $divWrap.mousemove(function (event) {
-                console.log("滑动事件")
                 var event = event || window.event;
                 var x = event.pageX;//鼠标滑动时的X轴
                 if (isDown) {
@@ -79,9 +79,6 @@
             });
             //验证数据
             function checkcode(code){
-                $divWrap.onmousemove =function(){
-                    null;
-                }
                 var iscur=true;
                 //模拟ajax
                 setTimeout(function(){
@@ -99,7 +96,7 @@
                             $divMove.animate({"left": "10px"},200);
                         },400);
                     }
-                },500)
+                },100)
             }
             //验证结果
             function checkcoderesult(i,txt){

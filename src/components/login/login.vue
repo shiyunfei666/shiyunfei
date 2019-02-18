@@ -35,10 +35,24 @@
   		      @keyup.native.enter="changeload"></el-input>
   		  </el-form-item>
   		</el-form>
-      <el-button type="primary" @click="tosignasd">验&nbsp;&nbsp;证</el-button>
+      <el-button class="toyanzhen" @click="tosignasd">点击按钮验证</el-button>
       <el-button type="primary" @click="changeload">登&nbsp;&nbsp;录</el-button>
-      <div class="tosign">还没有账号？立即 <a href="javascript:;">免费注册</a></div>
+      <div class="tosign">还没有账号？立即 <router-link to="/signup">免费注册</router-link></div>
     </div>
+    <el-dialog
+      title="提示"
+      :visible.sync="dialogVisible" 
+      :showClose="false"
+      width="30%">
+      <span style="margin-bottom: 20px;display: block;">您的手机号码： 15755073380</span>
+      <el-input v-model="loginform.code" size="small" @keyup.native.enter="signphones">
+        <template slot="append"><el-button size="small">点击发送验证码</el-button></template>
+      </el-input>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="signphones">确 定</el-button>
+      </span>
+    </el-dialog>
     <div class="fotter">
       <ul class="fotlist">
         <li><a href="javascript:;">官方网站</a></li>
@@ -67,9 +81,11 @@ export default {
         loginform: {
             username: '',
             password: '',
+            code: ''
         },
         swiperOption: {},
-        swiperSlides: [1, 2, 3, 4, 5]
+        swiperSlides: [1, 2, 3, 4, 5],
+        dialogVisible:false,
     }
   },
   mounted: function(){
@@ -98,6 +114,7 @@ export default {
   },
   methods: {
   	changeload(){
+      this.signphone()
   		var self = this;
   		if(self.loginform.username == ''){
             self.$message.error({ message: '用户名不为空' });
@@ -126,11 +143,18 @@ export default {
 	      }
 	    );
   	},
+    signphone(){
+      this.dialogVisible = true;
+    },
+    signphones(){
+      console.log(this.loginform.code)
+    },
     tosignasd(){
-      $("#imgscode").imgcode(a());
-      function a(data){
-        console.log(data)
-      }
+      $("#imgscode").imgcode({
+        callback: function(data){
+          console.log(data)
+        }
+      });
     },
   	sendcode(){
   		var self = this;

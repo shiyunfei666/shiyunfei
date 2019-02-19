@@ -53,15 +53,31 @@
             .step1btn{
             	width: 260px;
             }
-            .step1{
+            .step1,.step2,.step3{
             	width: 70%;
 			    float: left;
             	>.el-form{
             	    width: 50%;
+            	    float: left;
+            	}
+            	.tiplist{
+            		width: 40%;
+            		margin: 2px 8% 0 0;
+            		float: right;
+            		>div{
+            			height: 63px;
+	            		
+            		}
             	}
             }
             .step2{
-            	height: 2000px;
+            	
+            }
+            .step3{
+            	text-align: center;
+            	line-height: 400px;
+            	font-size: 36px;
+            	width: 100%;
             }
             .helfs{
 			    width: 30%;
@@ -70,6 +86,11 @@
             	float: right;
             	>span{
             		font-size: 16px;
+            	}
+            	>.el-button{
+            		a{
+            			color: #fff;
+            		}
             	}
             	>.helftip{
             		font-size: 14px;
@@ -84,5 +105,14 @@
             }
 	    }
     }
-    
+    .sendcodesss{
+    	>.el-input-group__append{
+    		padding: 0;
+    		>img{
+                height: 35px;
+                position: relative;
+			    top: 2px;
+    		}
+    	}
+    }
 }

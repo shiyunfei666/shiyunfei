@@ -97,20 +97,6 @@ export default {
         $("#pd").attr("type","text");
       }
     });
-     var self = this;
-    self.apphttps(
-      {
-        method: "post",
-        url: "admindlcode",
-      },
-      function(res) {
-        if(res.result == -1){
-            console.log(res)
-          }else{
-            // self.$message.error({ message: res.msg });
-          }
-      }
-    );
   },
   methods: {
   	changeload(){

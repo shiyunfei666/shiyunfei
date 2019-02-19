@@ -266,15 +266,27 @@
 #signup > .mainter > .con .step1btn {
   width: 260px;
 }
-#signup > .mainter > .con .step1 {
+#signup > .mainter > .con .step1, #signup > .mainter > .con .step2, #signup > .mainter > .con .step3 {
   width: 70%;
   float: left;
 }
-#signup > .mainter > .con .step1 > .el-form {
+#signup > .mainter > .con .step1 > .el-form, #signup > .mainter > .con .step2 > .el-form, #signup > .mainter > .con .step3 > .el-form {
   width: 50%;
+  float: left;
 }
-#signup > .mainter > .con .step2 {
-  height: 2000px;
+#signup > .mainter > .con .step1 .tiplist, #signup > .mainter > .con .step2 .tiplist, #signup > .mainter > .con .step3 .tiplist {
+  width: 40%;
+  margin: 2px 8% 0 0;
+  float: right;
+}
+#signup > .mainter > .con .step1 .tiplist > div, #signup > .mainter > .con .step2 .tiplist > div, #signup > .mainter > .con .step3 .tiplist > div {
+  height: 63px;
+}
+#signup > .mainter > .con .step3 {
+  text-align: center;
+  line-height: 400px;
+  font-size: 36px;
+  width: 100%;
 }
 #signup > .mainter > .con .helfs {
   width: 30%;
@@ -285,6 +297,9 @@
 #signup > .mainter > .con .helfs > span {
   font-size: 16px;
 }
+#signup > .mainter > .con .helfs > .el-button a {
+  color: #fff;
+}
 #signup > .mainter > .con .helfs > .helftip {
   font-size: 14px;
   margin: 30px 0 10px 0;
@@ -292,4 +307,12 @@
 #signup > .mainter > .con .helfs > ul li {
   font-size: 12px;
   line-height: 25px;
+}
+#signup .sendcodesss > .el-input-group__append {
+  padding: 0;
+}
+#signup .sendcodesss > .el-input-group__append > img {
+  height: 35px;
+  position: relative;
+  top: 2px;
 }

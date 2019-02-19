@@ -34,7 +34,8 @@ const appConfig = {
     //接口列表
     apis: {
         adminlogin: '/admin/usey/login',  //登陆验证 code:    pd:    us: 
-        admindlsend: '/admin/usey/dlsend',  //发送验证码 参数 phone: 
+        admindlsend: '/admin/usey/dlsend',  //内部登陆发送验证码 参数 phone: 
+        adminsend: '/admin/usey/send',  //注册发送验证码 参数 phone:  code
     	admindlcode: '/main/main/code',  //发送验证码 参数 phone: 
     }
 }

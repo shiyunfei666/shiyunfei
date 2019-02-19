@@ -23,6 +23,7 @@ import {
 	CarouselItem,
 	MessageBox,
     Dialog,
+    Alert,
 } from 'element-ui';
 
 Vue.use(Input)
@@ -46,6 +47,7 @@ Vue.use(FormItem);
 Vue.use(Carousel);
 Vue.use(CarouselItem);
 Vue.use(Dialog);
+Vue.use(Alert);
 Vue.prototype.$msgbox = MessageBox;
 Vue.prototype.$alert = MessageBox.alert;
 Vue.prototype.$confirm = MessageBox.confirm;

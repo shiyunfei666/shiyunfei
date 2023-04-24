@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-  	<el-container>
-		<el-header v-if="showlist">传播匠</el-header>
-		<el-container>
-			<el-main>
-				<router-view/>
-			</el-main>
-		</el-container>
-	</el-container>
+    <el-container>
+      <el-header v-if="showlist">传播匠</el-header>
+      <el-container>
+        <el-main>
+          <router-view/>
+        </el-main>
+      </el-container>
+    </el-container>
   </div>
 </template>
 
@@ -16,17 +16,17 @@ import login from './components/login/login.vue'
 export default {
   name: 'App',
   data () {
-  	return {
-        isload: false,
-  	}
+    return {
+      isload: false,
+    }
   },
   components: { login },
   computed: {
     showlist(){
-	    if(['/login','/signup'].includes(this.$route.path)){
-      	return false;
+      if(['/login','/signup'].includes(this.$route.path)){
+        return false;
       }else{
-      	return true;
+        return true;
       }
     }
   },
@@ -40,10 +40,10 @@ export default {
     // }
   },
   methods: {
-  	changeisload(msg){
+    changeisload(msg){
         this.isload = true;
         this.$router.push({ path: '/user' })
-  	},
+    },
   }
 }
 </script>
@@ -55,16 +55,16 @@ html,body,#app,.el-container{
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   >.el-container{
-  	>.el-header{
-  		background: #409eff;
-  		line-height: 60px;
-  		height: 60px;
-  		font-size: 22px;
-  		color: #fff;
-  	}
-  	.el-main{
-  		padding: 0;
-  	}
+    >.el-header{
+      background: #409eff;
+      line-height: 60px;
+      height: 60px;
+      font-size: 22px;
+      color: #fff;
+    }
+    .el-main{
+      padding: 0;
+    }
   }
 }
 </style>

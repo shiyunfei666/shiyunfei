@@ -23,10 +23,10 @@ const createLintingRule = () => ({
 module.exports = {
   context: path.resolve(__dirname, '../'),
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin('common.js'),
+    // new webpack.optimize.CommonsChunkPlugin('common.js'),
     new webpack.ProvidePlugin({
-    jQuery: "jquery",
-    $: "jquery"
+      jQuery: "jquery",
+      $: "jquery"
     })  
   ],
   entry: {

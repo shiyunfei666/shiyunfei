@@ -7,6 +7,19 @@
         </a>
       </swiper-slide>
     </swiper>
+    <div class="router-list">
+      <router-link to="/rwlist">rwlist</router-link>
+      <router-link to="/rwzlist">rwzlist</router-link>
+      <router-link to="/rwadd">rwadd</router-link>
+      <router-link to="/splist">splist</router-link>
+      <router-link to="/spadd">spadd</router-link>
+      <router-link to="/sppend">sppend</router-link>
+      <router-link to="/zmtlist">zmtlist</router-link>
+      <router-link to="/zmtpend">zmtpend</router-link>
+      <router-link to="/user">user</router-link>
+      <router-link to="/login">login</router-link>
+      <router-link to="/signup">signup</router-link>
+    </div>
   </div>
 </template>
 
@@ -29,9 +42,14 @@ export default {
     //     this.swiperSlides.push(this.swiperSlides.length + 1)
     //   }
     // }, 3000)
+    function aaa() {
+
+    }
   },
   methods: {
+    aaa() {
 
+    }
   },
   components: {
     swiper,
@@ -51,6 +69,14 @@ export default {
           height: 100%;
         }
       }
+    }
+  }
+
+  .router-list {
+    padding: 30px 50px;
+    a {
+      font-size: 18px;
+      display: block;
     }
   }
 }

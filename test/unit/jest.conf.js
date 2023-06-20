@@ -7,6 +7,8 @@ module.exports = {
     'json',
     'vue'
   ],
+  verbose: true,
+  testEnvironment: 'node',
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1'
   },

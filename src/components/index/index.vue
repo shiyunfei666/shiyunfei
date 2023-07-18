@@ -7,6 +7,10 @@
         </a>
       </swiper-slide>
     </swiper>
+    <select-common
+    :data="getData()"
+    v-model="selectValue"
+    ></select-common>
     <div class="router-list">
       <router-link to="/rwlist">rwlist</router-link>
       <router-link to="/rwzlist">rwzlist</router-link>
@@ -26,12 +30,14 @@
 <script>
 import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import selectCommon from '../select.vue'
 export default {
   name: 'index',
   data () {
     return {
         swiperOption: {},
-        swiperSlides: [1, 2, 3, 4, 5]
+        swiperSlides: [1, 2, 3, 4, 5],
+        selectValue: 1
     }
   },
   mounted() {
@@ -49,11 +55,23 @@ export default {
   methods: {
     aaa() {
 
+    },
+    getData(){
+      let arr = []
+      for(let i in Array(this.swiperSlides)){
+        console.log(i)
+        arr.push({
+          id: i,
+          name: i
+        })
+      }
+      return arr
     }
   },
   components: {
     swiper,
-    swiperSlide
+    swiperSlide,
+    selectCommon
   }
 }
 </script>

@@ -11,6 +11,7 @@
     :data="getData()"
     v-model="selectValue"
     ></select-common>
+    <tree-select v-model="value11" multiple :data="list11"></tree-select>
     <div class="router-list">
       <router-link to="/rwlist">rwlist</router-link>
       <router-link to="/rwzlist">rwzlist</router-link>
@@ -31,13 +32,40 @@
 import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import selectCommon from '../select.vue'
+import treeSelect from '../treeSelect.vue'
 export default {
   name: 'index',
   data () {
     return {
-        swiperOption: {},
-        swiperSlides: [1, 2, 3, 4, 5],
-        selectValue: 1
+      swiperOption: {},
+      swiperSlides: [1, 2, 3, 4, 5],
+      selectValue: 1,
+      list11: [{
+        label: '系统',
+        gid: 1,
+        leaf: false,
+        children: [
+          { label: '用户', gid: 2},
+          { label: '用户组', gid: 3},
+          { label: '角色', gid: 4 },
+          { label: '菜单', gid: 5 },
+          { label: '组织架构', gid: 6 }
+        ]
+      },
+      {
+        label: '商品',
+        gid: 7,
+        leaf: false,
+        children: [
+          { label: '列表', gid: 8 },
+          { label: '添加', gid: 9 },
+          { label: '修改', gid: 10 },
+          { label: '删除', gid: 11 },
+          { label: '商品分类', gid: 12 },
+          { label: '分类修改', gid: 13 }
+        ]
+      }],
+      value11: [{gid: 1, label: "系统", leaf: false}]
     }
   },
   mounted() {
@@ -53,8 +81,8 @@ export default {
     }
   },
   methods: {
-    aaa() {
-
+    getId() {
+      return Date.now() + '' + Math.random() * 10000
     },
     getData(){
       let arr = []
@@ -71,7 +99,8 @@ export default {
   components: {
     swiper,
     swiperSlide,
-    selectCommon
+    selectCommon,
+    treeSelect
   }
 }
 </script>

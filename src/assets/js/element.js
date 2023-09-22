@@ -4,6 +4,8 @@ import {
 	Button,
 	Radio,
 	Select,
+	Option,
+	Tree,
 	Checkbox,
 	Message,
 	Container,
@@ -30,6 +32,8 @@ Vue.use(Input)
 Vue.use(Button)
 Vue.use(Radio)
 Vue.use(Select)
+Vue.use(Option)
+Vue.use(Tree)
 Vue.use(Checkbox)
 Vue.use(Container)
 Vue.use(Header)
